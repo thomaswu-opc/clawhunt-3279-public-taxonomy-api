@@ -1,0 +1,37 @@
+$ E:/ClawHunt/acceptance/2824/work/.venv/Scripts/python.exe -m pytest -v
+# 2026-11-26T11:39:47  exit=0
+
+============================= test session starts =============================
+platform win32 -- Python 3.13.14, pytest-9.2.0, pluggy-1.7.0 -- E:\ClawHunt\acceptance\2824\work\.venv\Scripts\python.exe
+rootdir: E:\ClawHunt\acceptance\3279\work
+plugins: anyio-4.16.0
+collecting ... collected 12 items
+
+tests/test_acceptance.py::AC1NoDefinitionOrStats::test_ac1_draft_tags_are_not_exposed PASSED [  8%]
+tests/test_acceptance.py::AC1NoDefinitionOrStats::test_ac1_response_has_only_code_and_name PASSED [ 16%]
+tests/test_acceptance.py::AC1NoDefinitionOrStats::test_ac1_service_functions_also_hide_definition_and_stats PASSED [ 25%]
+tests/test_acceptance.py::AC1NoDefinitionOrStats::test_ac1_unknown_dict_404 PASSED [ 33%]
+tests/test_acceptance.py::AC2ResolveByAlias::test_ac2_alias_of_draft_tag_does_not_resolve PASSED [ 41%]
+tests/test_acceptance.py::AC2ResolveByAlias::test_ac2_resolve_by_alias PASSED [ 50%]
+tests/test_acceptance.py::AC2ResolveByAlias::test_ac2_resolve_by_code PASSED [ 58%]
+tests/test_acceptance.py::AC2ResolveByAlias::test_ac2_unknown_returns_none_and_dict_is_scoped PASSED [ 66%]
+tests/test_acceptance.py::AC3CacheHeader::test_ac3_cache_control_max_age_300 PASSED [ 75%]
+tests/test_acceptance.py::AC3CacheHeader::test_ac3_cache_header_only_on_success PASSED [ 83%]
+tests/test_acceptance.py::HttpLayer::test_http_requires_member_token PASSED [ 91%]
+tests/test_acceptance.py::HttpLayer::test_http_returns_cache_header PASSED [100%]
+
+============================== warnings summary ===============================
+tests/test_acceptance.py::HttpLayer::test_http_requires_member_token
+  E:\ClawHunt\acceptance\2824\work\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 12 passed, 1 warning in 0.53s ========================
+
+
+## AC coverage
+AC-1   simulatable    PASS  test_ac1_* matched
+AC-2   simulatable    PASS  test_ac2_* matched
+AC-3   unclear        PASS  doc/manual
+
+GATE: PASS

@@ -1,0 +1,25 @@
+$ python -m unittest discover -s tests -t . -v   # 带 fastapi+httpx
+# 2026-11-26T11:39:58+08:00
+test_ac1_draft_tags_are_not_exposed (tests.test_acceptance.AC1NoDefinitionOrStats.test_ac1_draft_tags_are_not_exposed) ... ok
+test_ac1_response_has_only_code_and_name (tests.test_acceptance.AC1NoDefinitionOrStats.test_ac1_response_has_only_code_and_name) ... ok
+test_ac1_service_functions_also_hide_definition_and_stats (tests.test_acceptance.AC1NoDefinitionOrStats.test_ac1_service_functions_also_hide_definition_and_stats) ... ok
+test_ac1_unknown_dict_404 (tests.test_acceptance.AC1NoDefinitionOrStats.test_ac1_unknown_dict_404) ... ok
+test_ac2_alias_of_draft_tag_does_not_resolve (tests.test_acceptance.AC2ResolveByAlias.test_ac2_alias_of_draft_tag_does_not_resolve) ... ok
+test_ac2_resolve_by_alias (tests.test_acceptance.AC2ResolveByAlias.test_ac2_resolve_by_alias) ... ok
+test_ac2_resolve_by_code (tests.test_acceptance.AC2ResolveByAlias.test_ac2_resolve_by_code) ... ok
+test_ac2_unknown_returns_none_and_dict_is_scoped (tests.test_acceptance.AC2ResolveByAlias.test_ac2_unknown_returns_none_and_dict_is_scoped) ... ok
+test_ac3_cache_control_max_age_300 (tests.test_acceptance.AC3CacheHeader.test_ac3_cache_control_max_age_300) ... ok
+test_ac3_cache_header_only_on_success (tests.test_acceptance.AC3CacheHeader.test_ac3_cache_header_only_on_success) ... ok
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_http_requires_member_token (tests.test_acceptance.HttpLayer.test_http_requires_member_token) ... ok
+test_http_returns_cache_header (tests.test_acceptance.HttpLayer.test_http_returns_cache_header) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.720s
+
+OK
+
+$ python -m unittest discover -s tests -t .     # 无第三方依赖（HTTP 层跳过）
+Ran 10 tests in 0.001s
+
+OK (skipped=1)

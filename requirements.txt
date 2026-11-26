@@ -1,0 +1,3 @@
+# 用例层零依赖；HTTP 层需要 fastapi + httpx
+fastapi>=0.110
+httpx>=0.27
